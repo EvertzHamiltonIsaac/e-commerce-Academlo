@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,400&display=swap');
+:root{
+    --color_1: hsl(354deg 78% 60%);
+    --color_2: hsl(0, 0%, 15%);
+    --color_3: hsl(0, 0%, 35%);
+    --color_4: hsl(0, 0%, 55%);
+    --color_ligth_gray: #E6E6E6;
+    --color_gray: #BFBFBF;
+    --color_white: #FFFF;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+
+    --font-size-tittle-mobile: 30px;
+    --font-size-mobile: 16px;
+    --font-family:'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: var(--font-family);
+}
+
+.e-container{
+    max-width: 1024px;
+    margin: auto;
+}
+
+.home{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+}
+
+.home-img{
+    background-color: var(--color_1);    
+    width: 258px;
+    height: 400px;
+    padding: 2rem 0rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    justify-self: flex-end;
+
+}
+
+.home-img img{
+    width: 100%;
+}
+
+.home-body{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.home-tittle{
+    font-size: var(--font-size-tittle-mobile);
+    font-weight: var(--font-bold);
+    color: var(--color_2);
+}
+
+.home-text{
+    color:var(--color_3);
+    font-size: var(--font-size-mobile);
+    font-weight: var(--font-light);
+}
+
+.home-price{
+    color: var(--color_1);
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.home-buttons{ 
+    width: calc(158px + 106px);
+    height: 58px;
+    display: flex;
+}
+
+.home-discover{
+    align-self: center;
+    width: 106px;
+    height: 50px;
+    padding: 16px 24px;
+    background-color: var(--color_gray);
+    cursor: pointer;
+}
+
+.Add-to-cart{
+    width: 158px;
+    height: 58px;
+    padding: 20px 28px;
+    background-color: var(--color_2);
+    cursor: pointer;
+    color: var(--color_white);
+}
+.products{
+    padding: 64px 0px 160px;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+    margin: 2rem;
+}
+
+.content_element{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.element{
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+}
+
+.products-img{
+    background-color: var(--color_ligth_gray);
+    width: 250px;
+    height: 310px;
+    display: flex;
+    cursor: pointer;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.products-img img{
+    width: 100%;
+    align-self: flex-end;
+}
+
+.product-body{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+}
+
+.product-body span{
+    font-weight: var(--font-regular);
+    font-size: small;
+    color: var(--color_3);
+}
+
+.btn{
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    right: 15px;
+    bottom: 45px;
+
+    font-size: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    background-color: white;
+    cursor: pointer;
+
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    background-color: var(--color_ligth_gray);
+    padding: 128px 0px 48px;
+}
+
+.Our-info{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.About-us{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.Product{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.Social{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.Social i{
+    font-size: 30px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: var(--color_ligth_gray);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
