@@ -486,8 +486,8 @@ body{
 
     .back{
         display: inline-block;
-        position: absolute;
-        top: 30px;
+        position: relative;
+        bottom: 330px;
         right: 30px;
         
         font-size: 38px;
