@@ -461,7 +461,7 @@ body{
 
     .navbar-txt{
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
 
         display: flex;
         gap: 2rem;
@@ -486,12 +486,12 @@ body{
 
     .back{
         display: inline-block;
-        margin-right: 20px;
-        margin-top: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        
         font-size: 38px;
-        position: relative;
-
-        bottom: 320px;
+        
         align-self: flex-end;
         cursor: pointer;
     }
