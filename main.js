@@ -9,6 +9,10 @@ const moon = document.querySelector('#id_moon');
 const sun = document.querySelector('#id_sun');
 const content_cart = document.querySelector(".content-cart-body");
 
+const total = document.querySelector("#id_total");
+
+const buy = document.querySelector('#id_buy');
+
 let html = '';
 
 
@@ -144,11 +148,14 @@ backContentCart.addEventListener('click', function(){
 
 let cart = {};
 
-function printProductsInCart(){
+function printProductsInCart(Subtotal){
     let html = '';
+    let totalOfProducts = 0;
     const arrayCart = Object.values(cart);
 
+
     arrayCart.forEach(({id, name, Price, stock, image, amount}) => {
+
         html += `
         <div class="item-cart">
 
@@ -161,7 +168,7 @@ function printProductsInCart(){
             <div class="item-cart-details">
                 <h3 class="item-cart-tittle">${name}</h3>
                 <p>Stock: ${stock} | $${Price}.00 </p>
-                <!-- <p>Subtotal: $24.00</p> -->
+                <p>Subtotal: $${amount*Price}.00</p>
             </div>
 
             <div class="item-cart-option" id="${id}">
@@ -175,9 +182,12 @@ function printProductsInCart(){
 
         </div>
         `
-    });
 
+         totalOfProducts += (amount * Price);
+    });
+    
     content_cart.innerHTML = html;
+    total.textContent = totalOfProducts;
 }
 
 function printImgCart(){
@@ -200,7 +210,14 @@ PRODUCTS.addEventListener('click', (e) => {
         console.log(findProducts);
 
         if(cart[idProducts]){
-            cart[idProducts].amount++;
+            if(cart[idProducts].amount >= cart[idProducts].stock){
+                alert('te pasaste del stock');
+                printProductsInCart();
+            }
+            else{
+                cart[idProducts].amount++;
+                printProductsInCart();
+            }
         } else {
             cart[idProducts] = findProducts;
             cart[idProducts].amount = 1;
@@ -215,21 +232,36 @@ content_cart.addEventListener('click', (e) => {
     
     if (e.target.classList.contains("bx-minus")) {
         const idProducts = +e.target.parentElement.id;
-        cart[idProducts].amount--;
-        printProductsInCart();
+        
+        if(cart[idProducts].amount > 1){
+            cart[idProducts].amount--;
+            printProductsInCart();
+        }
+        else{
+            delete cart[idProducts];
+            printProductsInCart();
+        }
     }
     if (e.target.classList.contains("bx-plus")) {
         const idProducts = +e.target.parentElement.id;
-        cart[idProducts].amount++;
-        printProductsInCart();
+    
+        if(cart[idProducts].amount >= cart[idProducts].stock){
+            alert('Te pasaste del Stock');
+            printProductsInCart();
+        }
+        else{
+            cart[idProducts].amount++;
+            printProductsInCart();
+        }
     }
     if (e.target.classList.contains("bx-trash")) {
         const idProducts = +e.target.parentElement.id;
         delete cart[idProducts];
         printProductsInCart();
-        if(Object.entries(cart).length === 0){
-            printImgCart();
-        }
+    }
+
+    if(Object.entries(cart).length === 0){
+        printImgCart();
     }
 });
 

@@ -66,8 +66,13 @@ body{
 }
 
 .content-cart-tittle{
-    position: relative;
-    bottom: 100px;
+    margin-top: 70px;
+    width: 100%;
+    height: 5%;
+}
+
+.content-cart-tittle h1{
+    text-align: center;
 }
 
 .content-cart-show{
@@ -87,6 +92,8 @@ body{
 }
 
 .content-cart-body{
+    width: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -133,7 +140,7 @@ body{
 }
 
 .item-cart-img{
-    width: 200px;
+    width: 150px;
 }
 
 .item-cart-img img{
@@ -156,6 +163,25 @@ body{
 .item-cart-option i{
     font-size: 20px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.total{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.buy{
+    background-color: var(--Color-Dark-gray);
+    color: var(--color_white);
+    padding: 1rem;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
 }
 
 
