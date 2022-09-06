@@ -486,12 +486,12 @@ body{
 
     .back{
         display: inline-block;
-        position: relative;
-        bottom: 230px;
-        right: 30px;
-        
+        margin-right: 20px;
+        margin-top: 20px;
         font-size: 38px;
-        
+        position: relative;
+
+        bottom: 320px;
         align-self: flex-end;
         cursor: pointer;
     }
