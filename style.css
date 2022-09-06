@@ -487,10 +487,10 @@ body{
     .back{
         display: inline-block;
         position: absolute;
-        top: 20px;
+        top: 30px;
         right: 30px;
         
-        font-size: 48px;
+        font-size: 38px;
         
         align-self: flex-end;
         cursor: pointer;
