@@ -3,12 +3,11 @@ import { data } from "./js/Data.js";
 
 const PRODUCTS = document.querySelector(".content_element");
 const back = document.querySelector('.back');
-const content_cart = document.querySelector('.content-cart-body');
 
 
 const moon = document.querySelector('#id_moon');
 const sun = document.querySelector('#id_sun');
-
+const content_cart = document.querySelector(".content-cart-body");
 
 let html = '';
 
@@ -91,8 +90,6 @@ const iconMenu = document.querySelector('#id_icon_menu');
 const Menu = document.querySelector('#id_menu');
 
 
-
-
 function Add_delete_Equis(element){
 
     const html = `
@@ -132,7 +129,7 @@ sun.addEventListener('click', function(){
 
 const shop_cart = document.querySelector("#id_icon-shop-cart");
 const content = document.querySelector('#content-cart');
-const backContentCart = document.querySelector('#back-conten');
+const backContentCart = document.querySelector('#back-content');
 
 shop_cart.addEventListener("click", (e) => {
     content.classList.toggle("content-cart-show");
@@ -183,6 +180,18 @@ function printProductsInCart(){
     content_cart.innerHTML = html;
 }
 
+function printImgCart(){
+    const html = `<div class="img-cart">
+            <img src="./img/empty-cart.png" alt="empty-cart">
+            </div>
+        <div class="content-text">
+        <h2> Your cart is empty </h2>
+        <p>You can add items to your cart by clicking on the "<i class='bx bx-cart-add'></i>" button on the product page.</p>
+        </div>`
+
+        content_cart.innerHTML = html;
+}
+
 PRODUCTS.addEventListener('click', (e) => {
     if(e.target.classList.contains("btn_agregar")){
         const idProducts = +e.target.parentElement.parentElement.id;
@@ -199,3 +208,27 @@ PRODUCTS.addEventListener('click', (e) => {
         printProductsInCart();
     }
 });
+
+
+content_cart.addEventListener('click', (e) => {
+    
+    if (e.target.classList.contains("bx-minus")) {
+        const idProducts = +e.target.parentElement.id;
+        cart[idProducts].amount--;
+        printProductsInCart();
+    }
+    if (e.target.classList.contains("bx-plus")) {
+        const idProducts = +e.target.parentElement.id;
+        cart[idProducts].amount++;
+        printProductsInCart();
+    }
+    if (e.target.classList.contains("bx-trash")) {
+        const idProducts = +e.target.parentElement.id;
+        delete cart[idProducts];
+        printProductsInCart();
+        if(Object.entries(cart).length === 0){
+            printImgCart();
+        }
+    }
+});
+
