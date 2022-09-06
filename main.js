@@ -181,12 +181,13 @@ function printProductsInCart(){
 }
 
 function printImgCart(){
-    const html = `<div class="img-cart">
+    const html = `
+        <div class="img-cart">
             <img src="./img/empty-cart.png" alt="empty-cart">
-            </div>
+        </div>
         <div class="content-text">
-        <h2> Your cart is empty </h2>
-        <p>You can add items to your cart by clicking on the "<i class='bx bx-cart-add'></i>" button on the product page.</p>
+            <h2> Your cart is empty </h2>
+            <p>You can add items to your cart by clicking on the "<i class='bx bx-cart-add'></i>" button on the product page.</p>
         </div>`
 
         content_cart.innerHTML = html;

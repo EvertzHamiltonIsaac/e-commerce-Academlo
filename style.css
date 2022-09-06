@@ -78,9 +78,9 @@ body{
     display: inline-block;
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 10px;
         
-    font-size: 48px;
+    font-size: 38px;
         
     align-self: flex-end;
     cursor: pointer;
@@ -96,7 +96,7 @@ body{
 
 
 .img-cart{
-    width: 500px;
+    width: 400px;
     padding: 1em;
     margin-left: 1.5em;
 }
@@ -107,10 +107,15 @@ body{
 
 .content-text{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-text p{
-    width: 500px;
+    padding: 1rem;
+    width: 400px;
+    text-align: center;
 }
 
 
@@ -527,7 +532,11 @@ body{
         right: 0;
     }
 
-
+    .content-text p{
+        padding: 1rem;
+        width: 300px;
+        text-align: center;
+    }
 
 }
 
